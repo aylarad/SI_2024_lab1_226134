@@ -1,0 +1,41 @@
+$ touch 226134.txt //se kreira nova datoteka
+$ mkdir SI_2024_lab1_226134 // se kreira nov direktorium
+$ cd SI_2024_lab1_226134 // se vlegovuva vo direktoriumot
+$ git init // se inicijalizira nov git repozitorium vo toj direktorium
+$ git remote add origin https://github.com/aylarad/SI_2024_lab1_226134.git // go povrzuva oddaleceniot repozitorium so lokalniot
+$ nano README.md //se kreira i ureduva datotekata
+$ git add README.md //se stavaat na scena promenite vo datotekata 
+$ git commit -m "Initial commit" //se commit-nuvaat promenite koi se na scena so poraka "Initial commit"
+$ curl -O https://raw.githubusercontent.com/stefanandonov/SI_2024/master/SILab1Main.java //se prezemaat podatocite od linkot
+$ curl -O https://raw.githubusercontent.com/stefanandonov/SI_2024/master/SILab1_1.java
+$ curl -O https://raw.githubusercontent.com/stefanandonov/SI_2024/master/SILab1_2.java
+$ git add . //gi stava na scena site promeni napraveni vo direktoriumot za sleden commit
+$ git commit -m "Add starter code" //se commit-nuvaat promenite koi se na scena so poraka "Add starter code"
+$ git push -u origin master //se stavaat site commit-nati promeni od lokalniot repozitorium na oddaleceniot
+$ git checkout -b bug1 master //se kreira nova granka od master bug1
+$ git checkout master //se vrakja na grankata master
+$ git checkout -b bug2 master //se kreira nova granka od master bug2
+$ git checkout bug1 //se odi na grankata bug1
+$ git add SILab1_1.java //se stavaat na scena promenite napraveni vo kodot vo SILab1_1.java
+$ git commit -m "Fix wrong condition in filterOddLengthStrings" //se commit-nuvaat promenite so poraka "Fix wrong condition in filterOddLengthStrings"
+$ git checkout bug2 //se odi na grankata bug2
+$ git add SILab1_2.java //se stavaat na scena promenite napraveni vo kodot vo SILab1_2.java
+$ git commit -m "Fix wrong condition in makeBigStringFrom" //se commit-nuvaat promenite so poraka "Fix wrong condition in makeBigStringFrom"
+$ git checkout bug1 //se odi na grankata bug1
+$ git add SILab1Main.java //se stavaat na scena promenite napraveni vo kodot vo SILab1Main.java
+$ git commit -m "Call method filterOddLengthStrings in main class" //se commit-nuvaat promenite so poraka "Call method filterOddLengthStrings in main class"
+$ git checkout bug2 //se odi na grankata bug2
+$ git add SILab1Main.java //se stavaat na scena promenite napraveni vo kodot vo SILab1Main.java
+$ git commit -m "Call method makeBigStringFrom in main class" //se commit-nuvaat promenite so poraka "Call method makeBigStringFrom in main class"
+$ git push origin --all //se stavaat site granki od lokalniot repozitorium na oddaleceniot repozitorium
+$ git checkout master //se odi na master grankata
+$ git merge bug1 //spojuvanje na grankata bug1 kon grankata master
+$ git push origin --all //azuriranje na grankite, odnosno se stavaat site granki od lokalniot repozitorium na oddaleceniot repozitorium
+$ git checkout bug2 //se odi na grankata bug2
+$ git rebase master //spojuvanje na promenite na grankata bug2 sprema master
+$ nano SILab1Main.java //resavanje na konfliktite racno
+$ git add SILab1Main.java //se stavaat na scena promenite napraveni vo kodot vo SILab1Main.java
+$ git rebase --continue //prodolzuvanje so spojuvanje(rebase) otkako se razreseni site konflikti
+$ git checkout master //se odi na grankata master
+$ git merge bug2 //spojuvanje na grankata bug2 kon grankata master
+$ git push --force origin --all //sosila se stavaat site granki i promenite vo bug2 na oddaleceniot repozitorium
